@@ -10,7 +10,7 @@ export const ToastProvider: React.FC = () => {
   if (toasts.length === 0) return null;
 
   return createPortal(
-    <div className="fixed bottom-4 right-4 z-[100] flex flex-col gap-2 max-w-sm w-full">
+    <div className="fixed bottom-4 right-4 z-[9999] flex flex-col gap-2 max-w-sm w-full">
       {toasts.map((toast) => {
         const Icon = toast.type === 'success' ? CheckCircle : 
                      toast.type === 'error' ? AlertCircle : Info;
@@ -21,9 +21,9 @@ export const ToastProvider: React.FC = () => {
             className={cn(
               "flex w-full items-start gap-3 rounded-lg border p-4 shadow-lg transition-all animate-in slide-in-from-bottom-5",
               {
-                "bg-card text-foreground border-border": toast.type === 'info',
-                "bg-emerald-50 text-emerald-900 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-300 dark:border-emerald-800": toast.type === 'success',
-                "bg-destructive/10 text-destructive border-destructive/20": toast.type === 'error',
+                "bg-white text-foreground border-border": toast.type === 'info',
+                "bg-emerald-50 text-emerald-900 border-emerald-200": toast.type === 'success',
+                "bg-red-50 text-destructive border-destructive/20": toast.type === 'error',
               }
             )}
           >

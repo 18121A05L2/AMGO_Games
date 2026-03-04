@@ -4,17 +4,20 @@ import { CampaignTable } from '../components/CampaignTable';
 import { CampaignFilters } from '../components/CampaignFilters';
 import type { Campaign } from '@/services/mockData/campaigns';
 import { Button } from '@/components/ui/Button';
+import { Input } from '@/components/ui/Input';
 import { Modal } from '@/components/ui/Modal';
 import { Plus, CheckSquare, RefreshCw, AlertCircle } from 'lucide-react';
 
 export const CampaignList: React.FC = () => {
   const { 
     data, total, isLoading, error, params, 
-    setParams, updateStatusOptimistic, bulkUpdateStatusOptimistic, refresh 
+    setParams, updateStatusOptimistic, bulkUpdateStatusOptimistic, refresh, createCampaign
   } = useCampaigns();
 
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [isBulkModalOpen, setIsBulkModalOpen] = useState(false);
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [newCampaign, setNewCampaign] = useState({ name: '', budget: 1000, startDate: '', endDate: '' });
 
   const handleToggleSelect = (id: string) => {
     setSelectedIds(prev => 
@@ -55,6 +58,18 @@ export const CampaignList: React.FC = () => {
     setSelectedIds([]);
   };
 
+  const handleCreateSubmit = async () => {
+    if (!newCampaign.name || !newCampaign.startDate || !newCampaign.endDate) return;
+    await createCampaign({
+      name: newCampaign.name,
+      budget: Number(newCampaign.budget),
+      startDate: new Date(newCampaign.startDate).toISOString(),
+      endDate: new Date(newCampaign.endDate).toISOString()
+    });
+    setIsCreateModalOpen(false);
+    setNewCampaign({ name: '', budget: 1000, startDate: '', endDate: '' });
+  };
+
   const totalPages = Math.ceil(total / (params.pageSize || 10));
 
   if (error && data.length === 0) {
@@ -82,7 +97,7 @@ export const CampaignList: React.FC = () => {
             <RefreshCw size={14} className={isLoading ? "animate-spin" : ""} />
             <span className="hidden sm:inline">Refresh</span>
           </Button>
-          <Button className="gap-2">
+          <Button className="gap-2" onClick={() => setIsCreateModalOpen(true)}>
             <Plus size={16} /> New Campaign
           </Button>
         </div>
@@ -97,12 +112,12 @@ export const CampaignList: React.FC = () => {
         </div>
         
         {selectedIds.length > 0 && (
-          <div className="bg-primary/5 border-y border-primary/20 px-6 py-2.5 flex items-center justify-between z-10 sticky top-0">
+          <div className="bg-primary/10 border border-primary/30 mx-4 sm:mx-6 my-2 px-4 py-2 flex items-center justify-between z-10 sticky top-0 rounded-lg shadow-sm">
             <span className="text-sm font-medium flex items-center gap-2 text-primary">
               <CheckSquare size={16} />
               {selectedIds.length} campaign(s) selected
             </span>
-            <Button size="sm" variant="secondary" onClick={() => setIsBulkModalOpen(true)}>
+            <Button size="sm" variant="default" className="shadow-sm font-semibold" onClick={() => setIsBulkModalOpen(true)}>
               Bulk Actions
             </Button>
           </div>
@@ -163,6 +178,44 @@ export const CampaignList: React.FC = () => {
         <div className="bg-muted p-3 mt-4 rounded text-xs border border-border text-muted-foreground">
           <AlertCircle size={14} className="inline mr-1" />
           Tip: Changing status will emit an optimistic UI update. If it fails due to mocked network latency, it will revert immediately.
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={isCreateModalOpen}
+        onClose={() => setIsCreateModalOpen(false)}
+        title="Create New Campaign"
+        footer={
+          <>
+            <Button variant="outline" onClick={() => setIsCreateModalOpen(false)}>Cancel</Button>
+            <Button 
+              onClick={handleCreateSubmit} 
+              disabled={!newCampaign.name || !newCampaign.startDate || !newCampaign.endDate}
+            >
+              Create Campaign
+            </Button>
+          </>
+        }
+      >
+        <div className="space-y-4 py-2">
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Campaign Name</label>
+            <Input value={newCampaign.name} onChange={e => setNewCampaign({...newCampaign, name: e.target.value})} placeholder="E.g. Summer Sale" />
+          </div>
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Budget ($)</label>
+            <Input type="number" value={newCampaign.budget} onChange={e => setNewCampaign({...newCampaign, budget: Number(e.target.value)})} min={100} />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Start Date</label>
+              <Input type="date" value={newCampaign.startDate} onChange={e => setNewCampaign({...newCampaign, startDate: e.target.value})} />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-medium">End Date</label>
+              <Input type="date" value={newCampaign.endDate} onChange={e => setNewCampaign({...newCampaign, endDate: e.target.value})} />
+            </div>
+          </div>
         </div>
       </Modal>
     </div>

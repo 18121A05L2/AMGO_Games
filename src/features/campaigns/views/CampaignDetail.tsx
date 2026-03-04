@@ -62,6 +62,16 @@ export const CampaignDetail: React.FC = () => {
     { id: 'performance', label: 'Performance', content: <PerformanceTab campaignId={campaign.id} /> },
   ];
 
+  const getStatusBadgeVariant = (status: string) => {
+    switch(status) {
+      case 'Active': return 'success';
+      case 'Failed': return 'destructive';
+      case 'Paused': return 'warning';
+      case 'Completed': return 'default';
+      default: return 'secondary';
+    }
+  };
+
   return (
     <div className="flex flex-col h-full max-w-5xl mx-auto space-y-6 animate-in fade-in">
       <div className="flex items-center gap-4">
@@ -74,7 +84,7 @@ export const CampaignDetail: React.FC = () => {
             <div className="flex items-center gap-2 mt-1 -ml-1 text-sm">
               <span className="text-muted-foreground">ID: {campaign.id}</span>
               <span className="text-border">•</span>
-              <Badge variant="outline">{campaign.status}</Badge>
+              <Badge variant={getStatusBadgeVariant(campaign.status)}>{campaign.status}</Badge>
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { simulateDelay, simulateErrorRate } from '@/services/mockApi';
 import { Spinner } from '@/components/ui/Spinner';
 import { AlertCircle, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { Card, CardContent } from '@/components/ui/Card';
 
 interface PerformanceTabProps {
   campaignId: string;
@@ -85,21 +86,27 @@ export const PerformanceTab: React.FC<PerformanceTabProps> = ({ campaignId }) =>
   return (
     <div className="space-y-6 animate-in slide-in-from-bottom-2 fade-in">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-        <div className="p-4 rounded-lg border bg-card shadow-sm">
-          <p className="text-sm text-muted-foreground font-medium mb-1">Total Impressions</p>
-          <p className="text-2xl font-bold">{data.reduce((a, b) => a + b.impressions, 0).toLocaleString()}</p>
-        </div>
-        <div className="p-4 rounded-lg border bg-card shadow-sm">
-          <p className="text-sm text-muted-foreground font-medium mb-1">Total Clicks</p>
-          <p className="text-2xl font-bold">{data.reduce((a, b) => a + b.clicks, 0).toLocaleString()}</p>
-        </div>
-        <div className="p-4 rounded-lg border bg-card shadow-sm">
-          <p className="text-sm text-muted-foreground font-medium mb-1">Conversions</p>
-          <p className="text-2xl font-bold">{data.reduce((a, b) => a + b.conversions, 0).toLocaleString()}</p>
-        </div>
+        <Card>
+          <CardContent className="p-4 pt-4">
+            <p className="text-sm text-muted-foreground font-medium mb-1">Total Impressions</p>
+            <p className="text-2xl font-bold">{data.reduce((a, b) => a + b.impressions, 0).toLocaleString()}</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4 pt-4">
+            <p className="text-sm text-muted-foreground font-medium mb-1">Total Clicks</p>
+            <p className="text-2xl font-bold">{data.reduce((a, b) => a + b.clicks, 0).toLocaleString()}</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4 pt-4">
+            <p className="text-sm text-muted-foreground font-medium mb-1">Conversions</p>
+            <p className="text-2xl font-bold">{data.reduce((a, b) => a + b.conversions, 0).toLocaleString()}</p>
+          </CardContent>
+        </Card>
       </div>
 
-      <div className="h-[400px] w-full border rounded-lg bg-card p-4 shadow-sm">
+      <Card className="h-[400px] w-full p-4">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
             <defs>
@@ -138,7 +145,7 @@ export const PerformanceTab: React.FC<PerformanceTabProps> = ({ campaignId }) =>
             />
           </AreaChart>
         </ResponsiveContainer>
-      </div>
+      </Card>
     </div>
   );
 };

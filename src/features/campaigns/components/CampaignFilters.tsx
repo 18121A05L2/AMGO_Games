@@ -78,24 +78,37 @@ export const CampaignFilters: React.FC<CampaignFiltersProps> = ({ params, onChan
       </div>
 
       {isFilterOpen && (
-        <div className="fixed sm:absolute z-40 bg-card border border-border shadow-lg right-0 sm:right-6 top-auto sm:top-auto sm:mt-12 w-full sm:w-auto p-4 rounded-lg flex flex-col gap-3 animate-in fade-in slide-in-from-top-2 bottom-0 sm:bottom-auto rounded-b-none sm:rounded-b-lg">
+        <div className="fixed sm:absolute z-[90] bg-card border border-border shadow-lg right-0 sm:right-6 top-auto sm:top-auto sm:mt-12 w-full sm:w-auto p-4 rounded-lg flex flex-col gap-3 animate-in fade-in slide-in-from-top-2 bottom-0 sm:bottom-auto rounded-b-none sm:rounded-b-lg bg-white">
           <div className="flex items-center justify-between sm:hidden pb-2 border-b border-border">
             <h3 className="font-medium text-sm">Filters</h3>
             <button onClick={() => setIsFilterOpen(false)}><X size={16}/></button>
           </div>
           <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Status</h4>
           <div className="flex flex-wrap gap-2">
-            {statusOptions.map(status => (
-              <Button
-                key={status}
-                variant={(params.statusFilter || []).includes(status) ? "default" : "outline"}
-                size="sm"
-                className="h-7 text-xs rounded-full px-3"
-                onClick={() => toggleStatus(status)}
-              >
-                {status}
-              </Button>
-            ))}
+            {statusOptions.map(status => {
+              const isSelected = (params.statusFilter || []).includes(status);
+              return (
+                <Button
+                  key={status}
+                  variant={isSelected ? "default" : "outline"}
+                  size="sm"
+                  className={cn(
+                    "h-7 text-xs rounded-full px-3 transition-all", 
+                    isSelected && {
+                      "bg-emerald-600 hover:bg-emerald-700 text-white border-transparent ring-emerald-600/30": status === 'Active',
+                      "bg-red-600 hover:bg-red-700 text-white border-transparent ring-red-600/30": status === 'Failed',
+                      "bg-amber-500 hover:bg-amber-600 text-white border-transparent ring-amber-500/30": status === 'Paused',
+                      "bg-blue-600 hover:bg-blue-700 text-white border-transparent ring-blue-600/30": status === 'Completed',
+                      "bg-secondary-foreground hover:bg-secondary-foreground/90 text-background border-transparent": status === 'Draft'
+                    },
+                    isSelected && "ring-2 ring-offset-2"
+                  )}
+                  onClick={() => toggleStatus(status)}
+                >
+                  {status}
+                </Button>
+              );
+            })}
           </div>
           {hasActiveFilters && (
             <Button 

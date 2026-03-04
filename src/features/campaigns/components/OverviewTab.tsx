@@ -5,6 +5,7 @@ import * as z from 'zod';
 import type { Campaign } from '@/services/mockData/campaigns';
 import { CampaignService } from '@/services/campaignService';
 import { useUIStore } from '@/store/uiStore';
+import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { AlertCircle, Save } from 'lucide-react';
@@ -133,9 +134,12 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ campaign, onUpdate }) 
           <Button 
             type="submit" 
             disabled={!isDirty || isSubmitting}
-            className="gap-2"
+            className={cn(
+              "gap-2 transition-all duration-300", 
+              isDirty && "bg-emerald-600 hover:bg-emerald-700 text-white shadow-md ring-2 ring-emerald-600 ring-offset-2"
+            )}
           >
-            <Save size={16} />
+            <Save size={16} className={cn(isDirty && "animate-pulse")} />
             {isSubmitting ? 'Saving...' : 'Save Settings'}
           </Button>
         </div>

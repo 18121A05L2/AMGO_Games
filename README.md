@@ -24,6 +24,11 @@ A robust, production-grade SaaS dashboard built to simulate complex backend work
    - Advanced Drag and Drop simulation with per-file progress arrays.
    - Interactive SVG charting using Recharts with built-in empty states and loading skeletons.
 
+## Live Deployment
+
+The application is hosted on Vercel and available to view at:
+**[https://amgo-games-lac.vercel.app](https://amgo-games-lac.vercel.app)**
+
 ## Running Locally
 
 1. Install dependencies

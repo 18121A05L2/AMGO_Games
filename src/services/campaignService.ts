@@ -14,6 +14,17 @@ export interface FetchCampaignsParams {
   sortDirection?: 'asc' | 'desc';
 }
 
+export interface DashboardStats {
+  totalCampaigns: number;
+  activeCampaigns: number;
+  completedCampaigns: number;
+  totalBudget: number;
+  totalSpent: number;
+  overbudgetCount: number;
+  upcomingDeadlines: Campaign[];
+  byStatus: Record<CampaignStatus, number>;
+}
+
 export const CampaignService = {
   async getCampaigns(params: FetchCampaignsParams): Promise<PaginatedResponse<Campaign>> {
     await simulateDelay(600);
@@ -102,5 +113,66 @@ export const CampaignService = {
     const { id: _, ...safeUpdates } = updates;
     campaignsDB[index] = { ...campaignsDB[index], ...safeUpdates };
     return { ...campaignsDB[index] };
+  },
+  
+  async createCampaign(data: Omit<Campaign, 'id' | 'spent' | 'status'>): Promise<Campaign> {
+    await simulateDelay(600);
+    await simulateErrorRate(0.05);
+
+    const newCampaign: Campaign = {
+      ...data,
+      id: `camp-${Math.floor(Math.random() * 100000).toString().padStart(6, '0')}`,
+      status: 'Draft',
+      spent: 0
+    };
+    
+    // Add to top of mock database
+    campaignsDB.unshift(newCampaign);
+    return { ...newCampaign };
+  },
+
+  async getDashboardStats(): Promise<DashboardStats> {
+    await simulateDelay(800);
+    
+    const now = new Date();
+    const tenDaysFromNow = new Date();
+    tenDaysFromNow.setDate(now.getDate() + 10);
+
+    const stats: DashboardStats = {
+      totalCampaigns: campaignsDB.length,
+      activeCampaigns: 0,
+      completedCampaigns: 0,
+      totalBudget: 0,
+      totalSpent: 0,
+      overbudgetCount: 0,
+      upcomingDeadlines: [],
+      byStatus: {
+        Draft: 0, Active: 0, Paused: 0, Completed: 0, Failed: 0
+      }
+    };
+
+    campaignsDB.forEach(c => {
+      stats.byStatus[c.status]++;
+      if (c.status === 'Active') stats.activeCampaigns++;
+      if (c.status === 'Completed') stats.completedCampaigns++;
+      
+      stats.totalBudget += c.budget;
+      stats.totalSpent += c.spent;
+
+      if (c.spent > c.budget) {
+        stats.overbudgetCount++;
+      }
+
+      const endDate = new Date(c.endDate);
+      if (endDate >= now && endDate <= tenDaysFromNow && c.status !== 'Completed') {
+        stats.upcomingDeadlines.push(c);
+      }
+    });
+
+    // Sort upcoming deadlines by closest first
+    stats.upcomingDeadlines.sort((a, b) => new Date(a.endDate).getTime() - new Date(b.endDate).getTime());
+    stats.upcomingDeadlines = stats.upcomingDeadlines.slice(0, 5); // top 5
+
+    return stats;
   }
 };

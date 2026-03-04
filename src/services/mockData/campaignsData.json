@@ -1,0 +1,488 @@
+[
+  {
+    "id": "camp-001",
+    "name": "Global Ad Campaign 1",
+    "status": "Active",
+    "budget": 11710,
+    "spent": 8058,
+    "startDate": "2026-03-04T18:23:46.248Z",
+    "endDate": "2026-03-24T18:23:46.252Z"
+  },
+  {
+    "id": "camp-002",
+    "name": "Global Ad Campaign 2",
+    "status": "Draft",
+    "budget": 80720,
+    "spent": 71546,
+    "startDate": "2026-03-02T18:23:46.252Z",
+    "endDate": "2026-04-09T18:23:46.252Z"
+  },
+  {
+    "id": "camp-003",
+    "name": "Global Ad Campaign 3",
+    "status": "Draft",
+    "budget": 13760,
+    "spent": 10436,
+    "startDate": "2026-02-25T18:23:46.252Z",
+    "endDate": "2026-03-16T18:23:46.252Z"
+  },
+  {
+    "id": "camp-004",
+    "name": "Global Ad Campaign 4",
+    "status": "Paused",
+    "budget": 80610,
+    "spent": 726,
+    "startDate": "2026-03-02T18:23:46.252Z",
+    "endDate": "2026-03-25T18:23:46.252Z"
+  },
+  {
+    "id": "camp-005",
+    "name": "Global Ad Campaign 5",
+    "status": "Completed",
+    "budget": 59930,
+    "spent": 2695,
+    "startDate": "2026-03-02T18:23:46.252Z",
+    "endDate": "2026-03-20T18:23:46.252Z"
+  },
+  {
+    "id": "camp-006",
+    "name": "Global Ad Campaign 6",
+    "status": "Failed",
+    "budget": 47150,
+    "spent": 37751,
+    "startDate": "2026-02-08T18:23:46.252Z",
+    "endDate": "2026-03-30T18:23:46.252Z"
+  },
+  {
+    "id": "camp-007",
+    "name": "Global Ad Campaign 7",
+    "status": "Draft",
+    "budget": 78010,
+    "spent": 47097,
+    "startDate": "2026-03-03T18:23:46.252Z",
+    "endDate": "2026-03-14T18:23:46.252Z"
+  },
+  {
+    "id": "camp-008",
+    "name": "Global Ad Campaign 8",
+    "status": "Failed",
+    "budget": 76110,
+    "spent": 73541,
+    "startDate": "2026-02-07T18:23:46.252Z",
+    "endDate": "2026-03-24T18:23:46.252Z"
+  },
+  {
+    "id": "camp-009",
+    "name": "Global Ad Campaign 9",
+    "status": "Completed",
+    "budget": 98410,
+    "spent": 77441,
+    "startDate": "2026-02-21T18:23:46.252Z",
+    "endDate": "2026-03-24T18:23:46.252Z"
+  },
+  {
+    "id": "camp-010",
+    "name": "Global Ad Campaign 10",
+    "status": "Failed",
+    "budget": 47430,
+    "spent": 14729,
+    "startDate": "2026-03-02T18:23:46.252Z",
+    "endDate": "2026-04-04T18:23:46.252Z"
+  },
+  {
+    "id": "camp-011",
+    "name": "Global Ad Campaign 11",
+    "status": "Failed",
+    "budget": 77760,
+    "spent": 70824,
+    "startDate": "2026-02-17T18:23:46.252Z",
+    "endDate": "2026-04-11T18:23:46.252Z"
+  },
+  {
+    "id": "camp-012",
+    "name": "Global Ad Campaign 12",
+    "status": "Paused",
+    "budget": 24520,
+    "spent": 6615,
+    "startDate": "2026-02-06T18:23:46.252Z",
+    "endDate": "2026-03-21T18:23:46.252Z"
+  },
+  {
+    "id": "camp-013",
+    "name": "Global Ad Campaign 13",
+    "status": "Completed",
+    "budget": 48050,
+    "spent": 11067,
+    "startDate": "2026-02-05T18:23:46.252Z",
+    "endDate": "2026-03-24T18:23:46.252Z"
+  },
+  {
+    "id": "camp-014",
+    "name": "Global Ad Campaign 14",
+    "status": "Draft",
+    "budget": 69570,
+    "spent": 57022,
+    "startDate": "2026-02-20T18:23:46.252Z",
+    "endDate": "2026-04-02T18:23:46.252Z"
+  },
+  {
+    "id": "camp-015",
+    "name": "Global Ad Campaign 15",
+    "status": "Completed",
+    "budget": 98130,
+    "spent": 18022,
+    "startDate": "2026-02-27T18:23:46.252Z",
+    "endDate": "2026-04-06T18:23:46.252Z"
+  },
+  {
+    "id": "camp-016",
+    "name": "Global Ad Campaign 16",
+    "status": "Draft",
+    "budget": 55550,
+    "spent": 31906,
+    "startDate": "2026-02-19T18:23:46.252Z",
+    "endDate": "2026-03-21T18:23:46.252Z"
+  },
+  {
+    "id": "camp-017",
+    "name": "Global Ad Campaign 17",
+    "status": "Completed",
+    "budget": 94520,
+    "spent": 77741,
+    "startDate": "2026-02-23T18:23:46.252Z",
+    "endDate": "2026-04-04T18:23:46.252Z"
+  },
+  {
+    "id": "camp-018",
+    "name": "Global Ad Campaign 18",
+    "status": "Draft",
+    "budget": 55920,
+    "spent": 26301,
+    "startDate": "2026-02-23T18:23:46.252Z",
+    "endDate": "2026-03-31T18:23:46.252Z"
+  },
+  {
+    "id": "camp-019",
+    "name": "Global Ad Campaign 19",
+    "status": "Draft",
+    "budget": 61380,
+    "spent": 18949,
+    "startDate": "2026-02-19T18:23:46.252Z",
+    "endDate": "2026-04-10T18:23:46.252Z"
+  },
+  {
+    "id": "camp-020",
+    "name": "Global Ad Campaign 20",
+    "status": "Failed",
+    "budget": 70720,
+    "spent": 5590,
+    "startDate": "2026-02-19T18:23:46.252Z",
+    "endDate": "2026-04-11T18:23:46.252Z"
+  },
+  {
+    "id": "camp-021",
+    "name": "Global Ad Campaign 21",
+    "status": "Active",
+    "budget": 46170,
+    "spent": 12820,
+    "startDate": "2026-02-05T18:23:46.252Z",
+    "endDate": "2026-03-14T18:23:46.252Z"
+  },
+  {
+    "id": "camp-022",
+    "name": "Global Ad Campaign 22",
+    "status": "Draft",
+    "budget": 54960,
+    "spent": 4102,
+    "startDate": "2026-02-04T18:23:46.252Z",
+    "endDate": "2026-04-08T18:23:46.252Z"
+  },
+  {
+    "id": "camp-023",
+    "name": "Global Ad Campaign 23",
+    "status": "Failed",
+    "budget": 18090,
+    "spent": 9599,
+    "startDate": "2026-02-28T18:23:46.252Z",
+    "endDate": "2026-03-17T18:23:46.252Z"
+  },
+  {
+    "id": "camp-024",
+    "name": "Global Ad Campaign 24",
+    "status": "Draft",
+    "budget": 59600,
+    "spent": 1553,
+    "startDate": "2026-02-19T18:23:46.252Z",
+    "endDate": "2026-03-28T18:23:46.252Z"
+  },
+  {
+    "id": "camp-025",
+    "name": "Global Ad Campaign 25",
+    "status": "Completed",
+    "budget": 49600,
+    "spent": 7575,
+    "startDate": "2026-02-28T18:23:46.252Z",
+    "endDate": "2026-03-20T18:23:46.252Z"
+  },
+  {
+    "id": "camp-026",
+    "name": "Global Ad Campaign 26",
+    "status": "Paused",
+    "budget": 84180,
+    "spent": 22637,
+    "startDate": "2026-02-19T18:23:46.252Z",
+    "endDate": "2026-03-30T18:23:46.252Z"
+  },
+  {
+    "id": "camp-027",
+    "name": "Global Ad Campaign 27",
+    "status": "Completed",
+    "budget": 90940,
+    "spent": 70707,
+    "startDate": "2026-02-19T18:23:46.252Z",
+    "endDate": "2026-03-15T18:23:46.252Z"
+  },
+  {
+    "id": "camp-028",
+    "name": "Global Ad Campaign 28",
+    "status": "Completed",
+    "budget": 54160,
+    "spent": 35996,
+    "startDate": "2026-02-24T18:23:46.252Z",
+    "endDate": "2026-03-14T18:23:46.252Z"
+  },
+  {
+    "id": "camp-029",
+    "name": "Global Ad Campaign 29",
+    "status": "Completed",
+    "budget": 12980,
+    "spent": 7948,
+    "startDate": "2026-02-08T18:23:46.252Z",
+    "endDate": "2026-03-24T18:23:46.252Z"
+  },
+  {
+    "id": "camp-030",
+    "name": "Global Ad Campaign 30",
+    "status": "Active",
+    "budget": 41210,
+    "spent": 40933,
+    "startDate": "2026-02-11T18:23:46.252Z",
+    "endDate": "2026-03-14T18:23:46.252Z"
+  },
+  {
+    "id": "camp-031",
+    "name": "Global Ad Campaign 31",
+    "status": "Active",
+    "budget": 36870,
+    "spent": 2644,
+    "startDate": "2026-02-16T18:23:46.252Z",
+    "endDate": "2026-04-10T18:23:46.252Z"
+  },
+  {
+    "id": "camp-032",
+    "name": "Global Ad Campaign 32",
+    "status": "Active",
+    "budget": 18230,
+    "spent": 233,
+    "startDate": "2026-02-18T18:23:46.252Z",
+    "endDate": "2026-04-09T18:23:46.252Z"
+  },
+  {
+    "id": "camp-033",
+    "name": "Global Ad Campaign 33",
+    "status": "Failed",
+    "budget": 8150,
+    "spent": 2838,
+    "startDate": "2026-03-03T18:23:46.252Z",
+    "endDate": "2026-03-26T18:23:46.252Z"
+  },
+  {
+    "id": "camp-034",
+    "name": "Global Ad Campaign 34",
+    "status": "Draft",
+    "budget": 63930,
+    "spent": 26976,
+    "startDate": "2026-02-20T18:23:46.252Z",
+    "endDate": "2026-04-12T18:23:46.252Z"
+  },
+  {
+    "id": "camp-035",
+    "name": "Global Ad Campaign 35",
+    "status": "Completed",
+    "budget": 22510,
+    "spent": 2269,
+    "startDate": "2026-02-22T18:23:46.252Z",
+    "endDate": "2026-04-01T18:23:46.252Z"
+  },
+  {
+    "id": "camp-036",
+    "name": "Global Ad Campaign 36",
+    "status": "Failed",
+    "budget": 25090,
+    "spent": 24220,
+    "startDate": "2026-02-07T18:23:46.252Z",
+    "endDate": "2026-04-03T18:23:46.252Z"
+  },
+  {
+    "id": "camp-037",
+    "name": "Global Ad Campaign 37",
+    "status": "Completed",
+    "budget": 21030,
+    "spent": 14697,
+    "startDate": "2026-02-09T18:23:46.252Z",
+    "endDate": "2026-04-06T18:23:46.252Z"
+  },
+  {
+    "id": "camp-038",
+    "name": "Global Ad Campaign 38",
+    "status": "Completed",
+    "budget": 51850,
+    "spent": 12386,
+    "startDate": "2026-02-14T18:23:46.252Z",
+    "endDate": "2026-03-25T18:23:46.252Z"
+  },
+  {
+    "id": "camp-039",
+    "name": "Global Ad Campaign 39",
+    "status": "Completed",
+    "budget": 74420,
+    "spent": 39246,
+    "startDate": "2026-02-12T18:23:46.252Z",
+    "endDate": "2026-04-08T18:23:46.252Z"
+  },
+  {
+    "id": "camp-040",
+    "name": "Global Ad Campaign 40",
+    "status": "Failed",
+    "budget": 61050,
+    "spent": 38412,
+    "startDate": "2026-02-20T18:23:46.252Z",
+    "endDate": "2026-04-02T18:23:46.252Z"
+  },
+  {
+    "id": "camp-041",
+    "name": "Global Ad Campaign 41",
+    "status": "Paused",
+    "budget": 18950,
+    "spent": 11319,
+    "startDate": "2026-02-20T18:23:46.252Z",
+    "endDate": "2026-03-23T18:23:46.252Z"
+  },
+  {
+    "id": "camp-042",
+    "name": "Global Ad Campaign 42",
+    "status": "Draft",
+    "budget": 97030,
+    "spent": 5876,
+    "startDate": "2026-02-27T18:23:46.252Z",
+    "endDate": "2026-03-28T18:23:46.252Z"
+  },
+  {
+    "id": "camp-043",
+    "name": "Global Ad Campaign 43",
+    "status": "Failed",
+    "budget": 44510,
+    "spent": 36530,
+    "startDate": "2026-03-01T18:23:46.252Z",
+    "endDate": "2026-04-12T18:23:46.252Z"
+  },
+  {
+    "id": "camp-044",
+    "name": "Global Ad Campaign 44",
+    "status": "Draft",
+    "budget": 18780,
+    "spent": 9626,
+    "startDate": "2026-02-28T18:23:46.252Z",
+    "endDate": "2026-03-30T18:23:46.252Z"
+  },
+  {
+    "id": "camp-045",
+    "name": "Global Ad Campaign 45",
+    "status": "Active",
+    "budget": 85010,
+    "spent": 26213,
+    "startDate": "2026-02-17T18:23:46.252Z",
+    "endDate": "2026-04-05T18:23:46.252Z"
+  },
+  {
+    "id": "camp-046",
+    "name": "Global Ad Campaign 46",
+    "status": "Failed",
+    "budget": 36580,
+    "spent": 11377,
+    "startDate": "2026-02-15T18:23:46.252Z",
+    "endDate": "2026-04-10T18:23:46.252Z"
+  },
+  {
+    "id": "camp-047",
+    "name": "Global Ad Campaign 47",
+    "status": "Active",
+    "budget": 20090,
+    "spent": 946,
+    "startDate": "2026-02-28T18:23:46.252Z",
+    "endDate": "2026-03-22T18:23:46.252Z"
+  },
+  {
+    "id": "camp-048",
+    "name": "Global Ad Campaign 48",
+    "status": "Active",
+    "budget": 60730,
+    "spent": 39856,
+    "startDate": "2026-02-17T18:23:46.252Z",
+    "endDate": "2026-03-27T18:23:46.252Z"
+  },
+  {
+    "id": "camp-049",
+    "name": "Global Ad Campaign 49",
+    "status": "Completed",
+    "budget": 5220,
+    "spent": 1150,
+    "startDate": "2026-02-15T18:23:46.252Z",
+    "endDate": "2026-04-06T18:23:46.252Z"
+  },
+  {
+    "id": "camp-050",
+    "name": "Global Ad Campaign 50",
+    "status": "Completed",
+    "budget": 43590,
+    "spent": 1509,
+    "startDate": "2026-02-19T18:23:46.252Z",
+    "endDate": "2026-04-09T18:23:46.252Z"
+  },
+  {
+    "id": "camp-051",
+    "name": "Global Ad Campaign 51",
+    "status": "Draft",
+    "budget": 10530,
+    "spent": 10269,
+    "startDate": "2026-02-14T18:23:46.252Z",
+    "endDate": "2026-03-17T18:23:46.252Z"
+  },
+  {
+    "id": "camp-052",
+    "name": "Global Ad Campaign 52",
+    "status": "Paused",
+    "budget": 99710,
+    "spent": 23065,
+    "startDate": "2026-02-13T18:23:46.252Z",
+    "endDate": "2026-03-30T18:23:46.252Z"
+  },
+  {
+    "id": "camp-053",
+    "name": "Global Ad Campaign 53",
+    "status": "Paused",
+    "budget": 83450,
+    "spent": 40300,
+    "startDate": "2026-02-04T18:23:46.252Z",
+    "endDate": "2026-04-09T18:23:46.252Z"
+  },
+  {
+    "id": "camp-054",
+    "name": "Global Ad Campaign 54",
+    "status": "Active",
+    "budget": 78480,
+    "spent": 32505,
+    "startDate": "2026-02-16T18:23:46.252Z",
+    "endDate": "2026-03-21T18:23:46.252Z"
+  }
+]

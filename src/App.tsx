@@ -3,14 +3,10 @@ import { DashboardLayout } from '@/layouts/DashboardLayout'
 import { ToastProvider } from '@/components/ui/ToastProvider'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { CampaignList } from '@/features/campaigns/views/CampaignList'
+import { CampaignDetail } from '@/features/campaigns/views/CampaignDetail'
 
-// Placeholder components until we build the real ones
-const DashboardPlaceholder = () => (
-  <div className="p-8"><h1 className="text-2xl font-bold">Dashboard</h1><p className="text-muted-foreground mt-2">Welcome to your workspace.</p></div>
-)
-const SettingsPlaceholder = () => (
-  <div className="p-8"><h1 className="text-2xl font-bold">Settings</h1></div>
-)
+import { DashboardHome } from '@/features/dashboard/views/DashboardHome'
+import { SettingsView } from '@/features/settings/views/SettingsView'
 
 function App() {
   return (
@@ -18,15 +14,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<DashboardLayout />}>
-            <Route index element={<DashboardPlaceholder />} />
+            <Route index element={<DashboardHome />} />
             
             <Route path="campaigns" element={<CampaignList />} />
             
-            <Route path="campaigns/:id" element={
-              <div className="p-8"><h1 className="text-2xl font-bold">Campaign Details</h1></div>
-            } />
+            <Route path="campaigns/:id" element={<CampaignDetail />} />
             
-            <Route path="settings" element={<SettingsPlaceholder />} />
+            <Route path="settings" element={<SettingsView />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

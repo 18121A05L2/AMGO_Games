@@ -2,10 +2,13 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { LayoutDashboard, Settings, Megaphone, Menu, X, Bell } from 'lucide-react';
 import { useUIStore } from '@/store/uiStore';
+import { useUserStore } from '@/store/userStore';
 import { cn } from '@/lib/utils';
 
 export const DashboardLayout: React.FC = () => {
   const { isSidebarOpen, toggleSidebar } = useUIStore();
+  const { profile } = useUserStore();
+  const initials = profile.name ? profile.name.charAt(0).toUpperCase() : 'U';
 
   const navItems = [
     { icon: LayoutDashboard, label: 'Dashboard', path: '/' },
@@ -34,8 +37,10 @@ export const DashboardLayout: React.FC = () => {
           </button>
         </div>
         
-        <nav className="p-4 space-y-2">
-          {navItems.map((item) => (
+        {/* Navigation wrapped in flex-1 to push user info bottom if needed, though here just a nav block */}
+        <div className="flex flex-col h-[calc(100%-4rem)] justify-between">
+          <nav className="p-4 space-y-2">
+            {navItems.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
@@ -52,7 +57,8 @@ export const DashboardLayout: React.FC = () => {
               {item.label}
             </NavLink>
           ))}
-        </nav>
+          </nav>
+        </div>
       </aside>
 
       {/* Main Content */}
@@ -73,8 +79,11 @@ export const DashboardLayout: React.FC = () => {
               <Bell size={20} />
               <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-destructive" />
             </button>
-            <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm border border-primary/30 cursor-pointer">
-              U
+            <div 
+              className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm border border-primary/30 cursor-pointer hover:bg-primary/30 transition-colors"
+              title={profile.name}
+            >
+              {initials}
             </div>
           </div>
         </header>

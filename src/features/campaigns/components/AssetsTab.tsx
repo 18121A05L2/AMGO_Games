@@ -187,7 +187,7 @@ export const AssetsTab: React.FC<AssetsTabProps> = ({ campaignId: _campaignId })
         footer={<Button onClick={() => setCompletedModalOpen(false)}>Done</Button>}
       >
         <div className="flex flex-col items-center justify-center py-6 text-center space-y-3">
-          <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center dark:bg-emerald-900/30 dark:text-emerald-400">
+          <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">
             <CheckCircle size={32} />
           </div>
           <h3 className="text-lg font-medium">All assets uploaded successfully!</h3>

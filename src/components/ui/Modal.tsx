@@ -35,12 +35,12 @@ export const Modal: React.FC<ModalProps> = ({
   if (!isOpen) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-0">
+    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 sm:p-0">
       <div 
         className="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity" 
         onClick={onClose} 
       />
-      <div className={cn("relative bg-card rounded-lg shadow-xl w-full flex flex-col max-h-[90vh] overflow-hidden", maxWidth)}>
+      <div className={cn("relative bg-white rounded-lg shadow-xl w-full flex flex-col max-h-[90vh] overflow-hidden", maxWidth)}>
         <div className="flex items-center justify-between p-4 border-b border-border shrink-0">
           <h2 className="text-lg font-semibold">{title}</h2>
           <button 

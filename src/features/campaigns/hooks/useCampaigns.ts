@@ -70,6 +70,20 @@ export function useCampaigns() {
     }
   };
 
+  const createCampaign = async (campaignData: Omit<Campaign, 'id' | 'spent' | 'status'>) => {
+    try {
+      const newCampaign = await CampaignService.createCampaign(campaignData);
+      // Prepend the new campaign to local state
+      setData(prev => [newCampaign, ...prev]);
+      setTotal(prev => prev + 1);
+      addToast({ title: 'Campaign Created', description: `${newCampaign.name} created successfully.`, type: 'success' });
+      return newCampaign;
+    } catch (err) {
+      addToast({ title: 'Creation Failed', description: 'Failed to create campaign.', type: 'error' });
+      throw err;
+    }
+  };
+
   return {
     data,
     total,
@@ -79,6 +93,7 @@ export function useCampaigns() {
     setParams,
     updateStatusOptimistic,
     bulkUpdateStatusOptimistic,
-    refresh: fetchCampaigns
+    refresh: fetchCampaigns,
+    createCampaign
   };
 }
