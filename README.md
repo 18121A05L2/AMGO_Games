@@ -7,6 +7,10 @@ A robust, production-grade SaaS dashboard built to simulate complex backend work
 The application is hosted on Vercel and available to view at:
 **[https://amgo-games-lac.vercel.app](https://amgo-games-lac.vercel.app)**
 
+## 🎥 Walkthrough Video
+
+A complete 3-minute headless browser automated walkthrough of the application features [can be viewed here](./walkthrough.webm) (or by checking the `walkthrough.webm` file in this repository).
+
 ---
 
 ## 🏗 Architecture
